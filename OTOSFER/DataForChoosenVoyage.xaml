@@ -1,0 +1,76 @@
+﻿<Window x:Class="OTOSFER.DataForChoosenVoyage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OTOSFER"
+        mc:Ignorable="d"
+        Title="DataForChoosenVoyage" Height="698" Width="981" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150*"></ColumnDefinition>
+                <ColumnDefinition Width="200*"></ColumnDefinition>
+                <ColumnDefinition Width="200*"></ColumnDefinition>
+                <ColumnDefinition Width="200*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80*"></RowDefinition>
+                <RowDefinition Height="50*"></RowDefinition>
+                <RowDefinition Height="50*"></RowDefinition>
+                <RowDefinition Height="50*"></RowDefinition>
+                <RowDefinition Height="50*"></RowDefinition>
+                <RowDefinition Height="80*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <!-- Sol sütun -->
+            <Label Margin="10,0,0,0"  Grid.Row="1" Grid.Column="0"  Content="Sefer No" VerticalAlignment="Center" HorizontalAlignment="Left"></Label>
+            <TextBox Margin="0,0,10,0" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Width="100" Height="20"></TextBox>
+            <Label Margin="10,0,0,0" Grid.Row="2" Grid.Column="0"  Content="Kalkış Yeri" VerticalAlignment="Center" HorizontalAlignment="Left"></Label>
+            <TextBox Margin="0,0,10,0" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Width="100" Height="20"></TextBox>
+            <Label Margin="10,0,0,0" Grid.Row="3" Grid.Column="0"  Content="Varış Yeri" VerticalAlignment="Center" HorizontalAlignment="Left"></Label>
+            <TextBox Margin="0,0,10,0" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Width="100" Height="20"></TextBox>
+            <Label Margin="10,0,0,0" Grid.Row="4" Grid.Column="0"  Content="Tarih ve Saat" VerticalAlignment="Center" HorizontalAlignment="Left"></Label>
+            <TextBox Margin="0,0,10,0" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Width="100" Height="20"></TextBox>
+            <!-- Sağ sütün -->
+            <Label  Grid.Row="1" Grid.Column="1"  Content="Yolcu Kapasitesi" VerticalAlignment="Center" HorizontalAlignment="Left"></Label>
+            <TextBox Margin="0,0,50,0" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Width="100" Height="20"></TextBox>
+            <Label  Grid.Row="2" Grid.Column="1"  Content="Plakası" VerticalAlignment="Center" HorizontalAlignment="Left"></Label>
+            <TextBox Margin="0,0,50,0"  Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Width="100" Height="20"></TextBox>
+            <Label  Grid.Row="3" Grid.Column="1"  Content="Kaptanı" VerticalAlignment="Center" HorizontalAlignment="Left"></Label>
+            <TextBox Margin="0,0,50,0"  Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Width="100" Height="20"></TextBox>
+            <Label  Grid.Row="4" Grid.Column="1"  Content="Bilet Fiyatı" VerticalAlignment="Center" HorizontalAlignment="Left"></Label>
+            <TextBox Margin="0,0,50,0"  Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Width="100" Height="20"></TextBox>
+            <!-- Koltuk Bilgisi -->
+            <Grid Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition ></ColumnDefinition>
+                    <ColumnDefinition ></ColumnDefinition>
+                    <ColumnDefinition ></ColumnDefinition>
+                    <ColumnDefinition ></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Button x:Name="Koltuk1btn" Grid.Column="0" Grid.Row="0" Content="1" Click="Koltuk1btn_Click"></Button>
+                <Button Grid.Column="1" Grid.Row="0" Content="2"></Button>
+                <Button Grid.Column="0" Grid.Row="1" Content="3"></Button>
+                <Button Grid.Column="1" Grid.Row="1" Content="4"></Button>
+                <Button Grid.Column="0" Grid.Row="2" Content="5"></Button>
+                <Button Grid.Column="1" Grid.Row="2" Content="6"></Button>
+                <Button Grid.Column="0" Grid.Row="3" Content="7"></Button>
+                <Button Grid.Column="1" Grid.Row="3" Content="8"></Button>
+                <Button Grid.Column="0" Grid.Row="4" Content="9"></Button>
+                <Button Grid.Column="1" Grid.Row="4" Content="10"></Button>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

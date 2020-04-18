@@ -1,0 +1,19 @@
+﻿<Window x:Class="OTOSFER.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OTOSFER"
+        mc:Ignorable="d"
+        Title="HomePage" Height="550" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Image Source="img/unnamed.jpg" Grid.ColumnSpan="2"  Width="800" Height="650"></Image>
+        <Button Name="Voyagebtn" Grid.Column="0" Height="60" Width="200" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top" Foreground="#FFF00000" BorderThickness="2" Content="Sefer İşlemleri" FontSize="25" FontFamily="Arial" OpacityMask="{x:Null}" Background="#66439DC7" Click="Voyagebtn_Click_1" />
+        <Button Name="Ticketbtn" Grid.Column="0" Height="60" Width="200" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" Background="Transparent" BorderThickness="2" Content="Bilet İşlemleri" FontSize="25" FontFamily="Arial" Click="Ticketbtn_Click" ></Button>
+    </Grid>
+</Window>

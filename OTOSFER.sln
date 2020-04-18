@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29509.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OTOSFER", "OTOSFER\OTOSFER.csproj", "{77B2E8EB-19B2-4C16-B01D-6A2D1A2148BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{77B2E8EB-19B2-4C16-B01D-6A2D1A2148BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77B2E8EB-19B2-4C16-B01D-6A2D1A2148BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77B2E8EB-19B2-4C16-B01D-6A2D1A2148BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77B2E8EB-19B2-4C16-B01D-6A2D1A2148BF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {170A90DB-B1DC-4E2E-AC52-EF53D0A5DFC1}
+	EndGlobalSection
+EndGlobal
