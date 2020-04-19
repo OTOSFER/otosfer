@@ -30,10 +30,15 @@
                             <ColumnDefinition ></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <Label Grid.Row="0" Grid.Column="0" Content="Kalkış Yeri" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,20,0" ></Label>
-                        
-                        <ComboBox Width="200" Height="30" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left"></ComboBox>
-                        
+                        <Label Style="{DynamicResource VoyageAddLabels}" Grid.Row="0" Grid.Column="0" Content="Kalkış Yeri" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,20,0" ></Label>
+
+                        <ComboBox x:Name="VoyageAddKalkisYericmb"  Width="200" Height="30" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" VerticalContentAlignment="Center">
+                            <ComboBoxItem Content="Kocaeli"/>
+                            <ComboBoxItem Content="Ankara"/>
+                            <ComboBoxItem Content="İstanbul"/>
+                            <ComboBoxItem Content="İzmir"/>
+                        </ComboBox>
+
                     </Grid>
                 </Border>
                 <!--Varış Yeri Row -->
@@ -43,8 +48,13 @@
                             <ColumnDefinition></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                    <Label Grid.Column="0" Content="Varış Yeri" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,20,0"></Label>
-                    <ComboBox Width="200" Height="30" Grid.Row="1" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Left"></ComboBox>
+                        <Label Style="{DynamicResource VoyageAddLabels}" Grid.Column="0" Content="Varış Yeri" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,27,0"></Label>
+                        <ComboBox x:Name="VoyageAddVarisYericmb" Width="200" Height="30" Grid.Row="1" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Left" VerticalContentAlignment="Center">
+                            <ComboBoxItem Content="Kocaeli"/>
+                            <ComboBoxItem Content="Ankara"/>
+                            <ComboBoxItem Content="İstanbul"/>
+                            <ComboBoxItem Content="İzmir"/>
+                        </ComboBox>
                     </Grid>
                 </Border>
                 <!--Bilet Fiyatı Row -->
@@ -54,8 +64,8 @@
                             <ColumnDefinition></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <Label Content="Bilet Fiyatı" Grid.Column="0"  VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,20,0"></Label>
-                        <TextBox Grid.Column="1" Width="200" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBox>
+                        <Label Style="{DynamicResource VoyageAddLabels}" Content="Bilet Fiyatı" Grid.Column="0"  VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,18,0"></Label>
+                        <TextBox x:Name="VoyageAddBiletFiyatitxt" Grid.Column="1" Width="200" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" VerticalContentAlignment="Center"></TextBox>
                     </Grid>
                 </Border>
                 <!--Plaka Row -->
@@ -65,11 +75,15 @@
                             <ColumnDefinition></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0" Content="Plaka" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,20,0"></Label>
-                        <ComboBox Grid.Column="1" Width="200" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left"></ComboBox>
+                        <Label Style="{DynamicResource VoyageAddLabels}" Grid.Column="0" Content="Plaka" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,50,0"></Label>
+                        <ComboBox x:Name="VoyageAddPlakacmb" Grid.Column="1" Width="200" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" VerticalContentAlignment="Center">
+                            <ComboBoxItem Content="41 H 421"/>
+                            <ComboBoxItem Content="41 AB 62"/>
+                            <ComboBoxItem Content="41 HV 41"/>
+                        </ComboBox>
                     </Grid>
                 </Border>
-                
+
             </Grid>
         </Border>
         <!--Sağ Columnn -->
@@ -87,34 +101,38 @@
                 <Border Grid.Row="1">
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="100"></ColumnDefinition>
+                            <ColumnDefinition Width="130"></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <Label Content="Kaptan" Grid.Column="0"  VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
-                        <ComboBox Grid.Column="1" Width="200" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left"></ComboBox>
+                        <Label Style="{DynamicResource VoyageAddLabels}" Content="Kaptan" Grid.Column="0"  VerticalAlignment="Center" HorizontalAlignment="Left"></Label>
+                        <ComboBox x:Name="VoyageAddKaptancmb" Grid.Column="1" Width="200" Height="30" Margin="10,0,0,0"  VerticalAlignment="Center" HorizontalAlignment="Left" VerticalContentAlignment="Center">
+                            <ComboBoxItem Content="Akın Baltürk"/>
+                            <ComboBoxItem Content="Tarık Ahmet Ersoylu"/>
+                            <ComboBoxItem Content="Alihan Sarı"/>
+                        </ComboBox>
                     </Grid>
                 </Border>
                 <!--Yolcu Kapasitesi Row -->
                 <Border Grid.Row="2">
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="100"></ColumnDefinition>
+                            <ColumnDefinition Width="130"></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <Label Content="Yolcu Kapasitesi" Grid.Column="0"  VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
-                        <TextBox Grid.Column="1" Width="200" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBox>
+                        <Label Style="{DynamicResource VoyageAddLabels}" Content="Yolcu Kapasitesi" Grid.Column="0"  VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                        <TextBox x:Name="VoyageAddYolcuKapasitesitxt" Grid.Column="1" Width="200" Height="30" Margin="10,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" VerticalContentAlignment="Center"></TextBox>
                     </Grid>
                 </Border>
                 <!--Tarih ve Saat Row -->
-                <Border Grid.Row="3" Grid.RowSpan="2">
+                <Border Grid.Row="3">
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="100"></ColumnDefinition>
+                            <ColumnDefinition Width="130"></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0"  Margin="0,45,0,0" Content="Tarih ve Saat" VerticalAlignment="Top" HorizontalAlignment="Left"></Label>
-                        <TextBox Grid.Column="1" Margin="0,45,0,0"  Width="200" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBox>
-                        <Button Grid.ColumnSpan="2" Margin="140,0,0,110"  Content="Şimdiki Zamanı Ekle" Width="120" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left"></Button>
+                        <Label Style="{DynamicResource VoyageAddLabels}" Grid.Column="0"  Content="Tarih ve Saat" VerticalAlignment="Center" HorizontalAlignment="Left"></Label>
+                        <TextBox x:Name="VoyageAddTarihtxt" Grid.Column="1" Margin="10,0,0,0"  Width="200" Height="30"  VerticalAlignment="Center" HorizontalAlignment="Left" VerticalContentAlignment="Center"></TextBox>
+                        <TextBox x:Name="VoyageAddSaattxt" Grid.Column="1" Width="100" Height="30" HorizontalAlignment="Right" Margin="0,0,30,0" VerticalContentAlignment="Center"></TextBox>
                     </Grid>
                 </Border>
             </Grid>
@@ -123,7 +141,7 @@
         <Border Grid.ColumnSpan="2">
             <Grid>
                 <Label Content="Sefer Ekle" FontSize="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,20,0,0"></Label>
-                <Button Content="Ekle" Width="185" Height="50" FontSize="20" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="20,0,0,50"></Button>
+                <Button x:Name="VoyageAddbtn" Content="Ekle" Width="185" Height="50" FontSize="18" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="20,0,0,50" Click="VoyageAddbtn_Click"></Button>
             </Grid>
         </Border>
     </Grid>

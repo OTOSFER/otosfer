@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:OTOSFER"
              StartupUri="HomePage.xaml">
     <Application.Resources>
-         
+        <!-- Voyage Add Labels -->
+        <Style x:Key="VoyageAddLabels" TargetType="Label">
+            <Setter Property="FontSize" Value="18"></Setter>
+            <Setter Property="FontWeight" Value="Light"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        </Style>
     </Application.Resources>
 </Application>
