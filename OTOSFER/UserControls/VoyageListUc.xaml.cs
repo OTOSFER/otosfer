@@ -1,5 +1,7 @@
-﻿using System;
+﻿using OTOSFER.Classes;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,23 +23,67 @@ namespace OTOSFER.UserControls
     public partial class VoyageListUc : UserControl
     {
         List<items> it = new List<items>();
+        string temp;
+        string[] yuklenecek = new string[8];
         public VoyageListUc()
         {
             InitializeComponent();
         }
 
+
+
         private void vluc_Loaded(object sender, RoutedEventArgs e)
         {
-            it.Add(new items { sno = 1, gzg = "Kocaeli-İstanbul", tvs = "10.12.2020-14:55" });
-            it.Add(new items { sno = 2, gzg = "Kocaeli-Ankara", tvs = "11.12.2020-19:55" });
-            it.Add(new items { sno = 3, gzg = "Kocaeli-İzmir", tvs = "12.12.2020-20:55" });
-            VoyageListdg.ItemsSource=it;
+            
+            using (StreamReader sr = new StreamReader("C:\\Users\\Lenovo\\Desktop\\" + Globals.gununtarihi + ".txt"))
+            {
+                string line;
+                int i = 0;
+                int j = 0;
+
+
+                while ((line = sr.ReadLine()) != null)
+                {
+                    
+
+                    while (i != line.Length)
+                    {
+
+                        if (line[i] != '-')
+                        {
+                            temp += line[i].ToString();
+                        }
+                        else
+                        {
+                            yuklenecek[j] = temp;
+                            temp = "";
+                            j++;
+                            if (j == yuklenecek.Length)
+                                j = 0;
+                        }
+                        i++;
+                    }
+                    i = 0;
+                    it.Add(new items { t = yuklenecek[0], s = yuklenecek[1], ky = yuklenecek[2], vy = yuklenecek[3], k = yuklenecek[4], p = yuklenecek[5], yk = yuklenecek[6], bf = yuklenecek[7] });
+   
+                }
+                VoyageListdg.ItemsSource = "null";
+                
+                VoyageListdg.ItemsSource = it;
+
+            }
         }
         class items
         {
             public int sno { get; set; }
-            public string gzg { get; set; }
-            public string tvs { get; set; }
+            public string t { get; internal set; }
+            public string s { get; internal set; }
+            public string ky { get; internal set; }
+            public string vy { get; internal set; }
+            public string k { get; internal set; }
+            public string p { get; internal set; }
+            public string yk { get; internal set; }
+            public string bf { get; internal set; }
         }
     }
 }

@@ -10,13 +10,15 @@
     <Grid Background="White">
         <DataGrid Height="600" Width="800" x:Name="VoyageListdg" RowBackground="Yellow" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn  Header="Sefer No" Binding="{Binding Path=sno}" ClipboardContentBinding="{x:Null}"/>
-                <DataGridTextColumn Header="Güzergah" Binding="{Binding Path=gzg}"  ClipboardContentBinding="{x:Null}"/>
-                <DataGridTextColumn Header="Tarih ve Saat" Binding="{Binding Path=tvs}"  ClipboardContentBinding="{x:Null}"/>
-                <DataGridTextColumn Binding="{x:Null}" Header="Yolcu Kapasitesi" ClipboardContentBinding="{x:Null}"/>
-                <DataGridTextColumn Binding="{x:Null}" Header="Kaptan Ad" ClipboardContentBinding="{x:Null}"/>
-                <DataGridTextColumn Binding="{x:Null}" Header="Plaka" ClipboardContentBinding="{x:Null}"/>
-                <DataGridTextColumn Binding="{x:Null}" Header="Bilet Fiyatı" ClipboardContentBinding="{x:Null}"/>
+                <!-- <DataGridTextColumn  Header="Sefer No" Binding="{Binding Path=sno}" ClipboardContentBinding="{x:Null}"/>  -->
+                <DataGridTextColumn Header="Tarih" Binding="{Binding Path=t}"  ClipboardContentBinding="{x:Null}"/>
+                <DataGridTextColumn Header="Saat" Binding="{Binding Path=s}"  ClipboardContentBinding="{x:Null}"/>
+                <DataGridTextColumn Header="Kalkış Yeri" Binding="{Binding Path=ky}"  ClipboardContentBinding="{x:Null}"/>
+                <DataGridTextColumn Header="Varış Yeri" Binding="{Binding Path=vy}"  ClipboardContentBinding="{x:Null}"/>
+                <DataGridTextColumn Header="Kaptan Ad" Binding="{Binding Path=k}"  ClipboardContentBinding="{x:Null}"/>
+                <DataGridTextColumn Header="Plaka" Binding="{Binding Path=p}" ClipboardContentBinding="{x:Null}"/>
+                <DataGridTextColumn Header="Yolcu Kapasitesi" Binding="{Binding Path=yk}" ClipboardContentBinding="{x:Null}"/>
+                <DataGridTextColumn Header="Bilet Fiyatı" Binding="{Binding Path=bf}" ClipboardContentBinding="{x:Null}"/>
             </DataGrid.Columns>
         </DataGrid>
 

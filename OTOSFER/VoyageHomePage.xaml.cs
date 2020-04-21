@@ -14,12 +14,15 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace OTOSFER
 {
     /// <summary>
     /// VoyageHomePage.xaml etkileşim mantığı
     /// </summary>
+    /// 
+    
     public partial class VoyageHomePage : Window
     {
         
@@ -46,12 +49,12 @@ namespace OTOSFER
 
         private void VoyageListbtn_Click(object sender, RoutedEventArgs e)
         {
+            Globals.gununtarihi = "22.04.2020";
             CallUserControls.Add_Uc(icerik, new VoyageListUc());
         }
 
         private void PastVoyagebtn_Click(object sender, RoutedEventArgs e)
         {
-            
             ChooseDateForPastVoyageList cdfpvl = new ChooseDateForPastVoyageList();
             cdfpvl.ShowDialog();
         }

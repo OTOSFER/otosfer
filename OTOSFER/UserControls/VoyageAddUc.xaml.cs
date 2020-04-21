@@ -21,7 +21,7 @@ namespace OTOSFER
     /// </summary>
     public partial class VoyageAddUc : UserControl
     {
-        int i = 0;
+        
         public VoyageAddUc()
         {
             InitializeComponent();
@@ -64,7 +64,7 @@ namespace OTOSFER
                     }
                     using (StreamWriter sw = File.AppendText(path))
                     {
-                        sw.WriteLine(VoyageAddTarihtxt.Text + " " + VoyageAddSaattxt.Text + " " + VoyageAddKalkisYericmb.Text + " " + VoyageAddVarisYericmb.Text + " " + VoyageAddKaptancmb.Text + " " + VoyageAddPlakacmb.Text + " " + VoyageAddYolcuKapasitesitxt.Text + " " + VoyageAddBiletFiyatitxt.Text);
+                        sw.WriteLine(VoyageAddTarihtxt.Text + "-" + VoyageAddSaattxt.Text + "-" + VoyageAddKalkisYericmb.Text + "-" + VoyageAddVarisYericmb.Text + "-" + VoyageAddKaptancmb.Text + "-" + VoyageAddPlakacmb.Text + "-" + VoyageAddYolcuKapasitesitxt.Text + "-" + VoyageAddBiletFiyatitxt.Text+"-");
 
                     }
 

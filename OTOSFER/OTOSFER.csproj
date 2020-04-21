@@ -62,6 +62,7 @@
       <DependentUpon>ChooseDateForPastVoyageList.xaml</DependentUpon>
     </Compile>
     <Compile Include="Classes\CallUserControls.cs" />
+    <Compile Include="Classes\Globals.cs" />
     <Compile Include="DataForChoosenVoyage.xaml.cs">
       <DependentUpon>DataForChoosenVoyage.xaml</DependentUpon>
     </Compile>
