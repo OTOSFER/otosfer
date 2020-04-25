@@ -8,7 +8,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="698" d:DesignWidth="981" Loaded="vluc_Loaded">
     <Grid Background="White">
-        <DataGrid Height="600" Width="800" x:Name="VoyageListdg" RowBackground="Yellow" AutoGenerateColumns="False">
+        <DataGrid Height="600" Width="800" x:Name="VoyageListdg" RowBackground="Yellow" AutoGenerateColumns="False" SelectionChanged="VoyageListdg_SelectionChanged" IsReadOnly="True" CanUserResizeRows="False">
+  
             <DataGrid.Columns>
                 <!-- <DataGridTextColumn  Header="Sefer No" Binding="{Binding Path=sno}" ClipboardContentBinding="{x:Null}"/>  -->
                 <DataGridTextColumn Header="Tarih" Binding="{Binding Path=t}"  ClipboardContentBinding="{x:Null}"/>

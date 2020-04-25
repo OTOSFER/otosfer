@@ -59,3 +59,5 @@ C:\Users\Lenovo\source\repos\OTOSFER\OTOSFER\obj\Debug\DataForChoosenVoyage.baml
 C:\Users\Lenovo\source\repos\OTOSFER\OTOSFER\obj\Debug\TicketOperation.g.cs
 C:\Users\Lenovo\source\repos\OTOSFER\OTOSFER\obj\Debug\TicketOperation.baml
 C:\Users\Lenovo\source\repos\OTOSFER\OTOSFER\obj\Debug\App.baml
+C:\Users\Lenovo\source\repos\OTOSFER\OTOSFER\obj\Debug\VoyageListDetail.g.cs
+C:\Users\Lenovo\source\repos\OTOSFER\OTOSFER\obj\Debug\VoyageListDetail.baml

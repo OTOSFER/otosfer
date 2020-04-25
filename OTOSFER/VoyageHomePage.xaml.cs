@@ -58,15 +58,18 @@ namespace OTOSFER
             ChooseDateForPastVoyageList cdfpvl = new ChooseDateForPastVoyageList();
             cdfpvl.ShowDialog();
         }
-        public void Call()
-        {
-            CallUserControls.Add_Uc(icerik, new PastVoyageListUc());
-        }
 
         private void MountCalculate_Click(object sender, RoutedEventArgs e)
         {
-            ChooseDateForMountCalculate cdfmc = new ChooseDateForMountCalculate();
-            cdfmc.ShowDialog();
+            //ChooseDateForMountCalculate cdfmc = new ChooseDateForMountCalculate();
+            //cdfmc.ShowDialog();
+            Call();
+        }
+
+        public void Call()
+        {
+            CallUserControls.Add_Uc(icerik, new PastVoyageListUc());
+            MessageBox.Show("Çağırıldım");
         }
     }
 }

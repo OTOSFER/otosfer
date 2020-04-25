@@ -9,5 +9,6 @@ namespace OTOSFER.Classes
     class Globals
     {
         public static string gununtarihi;
+        public static string gecmisguntarihi;
     }
 }

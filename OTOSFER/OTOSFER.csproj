@@ -63,6 +63,7 @@
     </Compile>
     <Compile Include="Classes\CallUserControls.cs" />
     <Compile Include="Classes\Globals.cs" />
+    <Compile Include="Classes\Items.cs" />
     <Compile Include="DataForChoosenVoyage.xaml.cs">
       <DependentUpon>DataForChoosenVoyage.xaml</DependentUpon>
     </Compile>
@@ -89,6 +90,9 @@
     </Compile>
     <Compile Include="VoyageHomePage.xaml.cs">
       <DependentUpon>VoyageHomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VoyageListDetail.xaml.cs">
+      <DependentUpon>VoyageListDetail.xaml</DependentUpon>
     </Compile>
     <Page Include="ChooseDateForMountCalculate.xaml">
       <SubType>Designer</SubType>
@@ -143,6 +147,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="VoyageHomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VoyageListDetail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

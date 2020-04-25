@@ -12,7 +12,11 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Label Content="Tarih ve Saat Seçiniz" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0"></Label>
-        <ComboBox Width="190" Height="30" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0"></ComboBox>
+        <ComboBox x:Name="pastvoyagedatecmb" Width="190" Height="30" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalContentAlignment="Center">
+            <ComboBoxItem Content="22.04.2020"/>
+            <ComboBoxItem Content="23.04.2020"/>
+            <ComboBoxItem Content="24.04.2020"/>
+        </ComboBox>
         <Border Grid.Column="1">
             <Button x:Name="PastVoyageListbtn" VerticalAlignment="Center" HorizontalAlignment="Left" Content="Listele" Width="90" Height="30" Margin="10,80,0,0" Click="PastVoyageListbtn_Click" BorderBrush="{x:Null}"></Button>
         </Border>

@@ -1,12 +1,15 @@
 ﻿using OTOSFER.Classes;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -22,9 +25,9 @@ namespace OTOSFER.UserControls
     /// </summary>
     public partial class VoyageListUc : UserControl
     {
-        List<items> it = new List<items>();
-        string temp;
-        string[] yuklenecek = new string[8];
+        List<Items> vlit = new List<Items>();
+        string vltemp;
+        string[] vlyuklenecek = new string[8];
         public VoyageListUc()
         {
             InitializeComponent();
@@ -51,39 +54,51 @@ namespace OTOSFER.UserControls
 
                         if (line[i] != '-')
                         {
-                            temp += line[i].ToString();
+                            vltemp += line[i].ToString();
                         }
                         else
                         {
-                            yuklenecek[j] = temp;
-                            temp = "";
+                            vlyuklenecek[j] = vltemp;
+                            vltemp = "";
                             j++;
-                            if (j == yuklenecek.Length)
+                            if (j == vlyuklenecek.Length)
                                 j = 0;
                         }
                         i++;
                     }
                     i = 0;
-                    it.Add(new items { t = yuklenecek[0], s = yuklenecek[1], ky = yuklenecek[2], vy = yuklenecek[3], k = yuklenecek[4], p = yuklenecek[5], yk = yuklenecek[6], bf = yuklenecek[7] });
+                    vlit.Add(new Items { t = vlyuklenecek[0], s = vlyuklenecek[1], ky = vlyuklenecek[2], vy = vlyuklenecek[3], k = vlyuklenecek[4], p = vlyuklenecek[5], yk = vlyuklenecek[6], bf = vlyuklenecek[7] });
    
                 }
                 VoyageListdg.ItemsSource = "null";
                 
-                VoyageListdg.ItemsSource = it;
+                VoyageListdg.ItemsSource = vlit;
 
             }
         }
-        class items
+
+        private void VoyageListdg_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            public int sno { get; set; }
-            public string t { get; internal set; }
-            public string s { get; internal set; }
-            public string ky { get; internal set; }
-            public string vy { get; internal set; }
-            public string k { get; internal set; }
-            public string p { get; internal set; }
-            public string yk { get; internal set; }
-            public string bf { get; internal set; }
+            int i = 0;
+            VoyageListDetail vld = new VoyageListDetail();
+            foreach (var abc in vlit) 
+            {   
+                if(i==VoyageListdg.SelectedIndex)
+                {
+                    vld.VoyageListDetailtarihtxt.Text = abc.t;
+                    vld.VoyageListDetailsaattxt.Text = abc.s;
+                    vld.VoyageListDetailkalkisyeritxt.Text = abc.ky;
+                    vld.VoyageListDetailvarisyeritxt.Text = abc.vy;
+                    vld.VoyageListDetailkaptantxt.Text = abc.k;
+                    vld.VoyageListDetailplakatxt.Text = abc.p;
+                    vld.VoyageListDetailyolcukapasitesitxt.Text = abc.yk;
+                    vld.VoyageListDetailbiletfiyatitxt.Text = abc.bf;
+                }
+                i++;
+            }
+            vld.ShowDialog();
+            
+    
         }
     }
 }

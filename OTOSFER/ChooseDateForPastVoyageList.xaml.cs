@@ -1,4 +1,6 @@
-﻿using System;
+﻿using OTOSFER.Classes;
+using OTOSFER.UserControls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,15 +21,19 @@ namespace OTOSFER
     /// </summary>
     public partial class ChooseDateForPastVoyageList : Window
     {
+       
         
         public ChooseDateForPastVoyageList()
         {
             InitializeComponent();
+            
         }
 
-        private void PastVoyageListbtn_Click(object sender, RoutedEventArgs e)
+        public void PastVoyageListbtn_Click(object sender, RoutedEventArgs e)
         {
-           
+            Globals.gecmisguntarihi = pastvoyagedatecmb.Text;
+            VoyageHomePage vhp = new VoyageHomePage();
+            vhp.Call();
             this.Close();
             
         }
@@ -36,5 +42,6 @@ namespace OTOSFER
         {
             this.Close();
         }
+
     }
 }
