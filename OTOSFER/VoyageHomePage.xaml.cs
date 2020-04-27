@@ -25,10 +25,15 @@ namespace OTOSFER
     
     public partial class VoyageHomePage : Window
     {
+         
         
         public VoyageHomePage()
         {
             InitializeComponent();
+        }
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            Globals.grd = icerik;
         }
 
         private void Close_Click(object sender, RoutedEventArgs e)
@@ -53,23 +58,20 @@ namespace OTOSFER
             CallUserControls.Add_Uc(icerik, new VoyageListUc());
         }
 
-        private void PastVoyagebtn_Click(object sender, RoutedEventArgs e)
+        public void PastVoyagebtn_Click(object sender, RoutedEventArgs e)
         {
             ChooseDateForPastVoyageList cdfpvl = new ChooseDateForPastVoyageList();
             cdfpvl.ShowDialog();
+            
         }
 
         private void MountCalculate_Click(object sender, RoutedEventArgs e)
         {
-            //ChooseDateForMountCalculate cdfmc = new ChooseDateForMountCalculate();
-            //cdfmc.ShowDialog();
-            Call();
+            ChooseDateForMountCalculate cdfmc = new ChooseDateForMountCalculate();
+            cdfmc.ShowDialog();
+            
         }
 
-        public void Call()
-        {
-            CallUserControls.Add_Uc(icerik, new PastVoyageListUc());
-            MessageBox.Show("Çağırıldım");
-        }
+        
     }
 }

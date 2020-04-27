@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OTOSFER"
         mc:Ignorable="d"
-        Title="VoyageHomePage" Height="900" Width="1200" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="VoyageHomePage" Height="900" Width="1200" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <!-- Ana Grid -->
     <Grid>
         <Grid.ColumnDefinitions>

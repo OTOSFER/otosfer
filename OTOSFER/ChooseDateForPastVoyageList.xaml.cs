@@ -31,9 +31,9 @@ namespace OTOSFER
 
         public void PastVoyageListbtn_Click(object sender, RoutedEventArgs e)
         {
+            
             Globals.gecmisguntarihi = pastvoyagedatecmb.Text;
-            VoyageHomePage vhp = new VoyageHomePage();
-            vhp.Call();
+            CallUserControls.Add_Uc(Globals.grd, new PastVoyageListUc());
             this.Close();
             
         }

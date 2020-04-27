@@ -25,6 +25,7 @@ namespace OTOSFER.UserControls
         List<Items> pvlit = new List<Items>();
         string pvltemp;
         string[] pvlyuklenecek = new string[8];
+
         public PastVoyageListUc()
         {
             InitializeComponent();
@@ -32,7 +33,7 @@ namespace OTOSFER.UserControls
 
         private void pvluc_Loaded(object sender, RoutedEventArgs e)
         {
-            Globals.gecmisguntarihi = "22.04.2020";
+            
             using (StreamReader sr = new StreamReader("C:\\Users\\Lenovo\\Desktop\\" + Globals.gecmisguntarihi + ".txt"))
             {
                 string line;

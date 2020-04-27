@@ -132,7 +132,7 @@
                         </Grid.ColumnDefinitions>
                         <Label Style="{DynamicResource VoyageAddLabels}" Grid.Column="0"  Content="Tarih ve Saat" VerticalAlignment="Center" HorizontalAlignment="Left"></Label>
                         <TextBox x:Name="VoyageAddTarihtxt" Grid.Column="1" Margin="10,0,0,0"  Width="200" Height="30"  VerticalAlignment="Center" HorizontalAlignment="Left" VerticalContentAlignment="Center"></TextBox>
-                        <TextBox x:Name="VoyageAddSaattxt" Grid.Column="1" Width="100" Height="30" HorizontalAlignment="Right" Margin="0,0,30,0" VerticalContentAlignment="Center"></TextBox>
+                        <TextBox x:Name="VoyageAddSaattxt" Grid.Column="1" Width="60" Height="30" HorizontalAlignment="Right" Margin="0,0,80,0" VerticalContentAlignment="Center"></TextBox>
                     </Grid>
                 </Border>
             </Grid>
@@ -140,7 +140,7 @@
         <!--Başlık ve Buton -->
         <Border Grid.ColumnSpan="2">
             <Grid>
-                <Label Content="Sefer Ekle" FontSize="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,20,0,0"></Label>
+                <Label Content="Sefer Ekle" FontSize="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="30,20,0,0"></Label>
                 <Button x:Name="VoyageAddbtn" Content="Ekle" Width="185" Height="50" FontSize="18" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="20,0,0,50" Click="VoyageAddbtn_Click"></Button>
             </Grid>
         </Border>
