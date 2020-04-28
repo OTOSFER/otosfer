@@ -13,5 +13,10 @@ namespace OTOSFER.Classes
         public static string gecmisguntarihi;
         public static int pastvoyagelisttemp=0;
         public static Grid grd;
+        public static int seferno = 0;
+        public static DataGrid vldg;
+        public static string tumseferyolu = "C:\\Users\\Lenovo\\Desktop\\TumSeferListesi.txt";
+            
+
     }
 }

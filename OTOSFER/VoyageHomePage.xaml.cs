@@ -54,11 +54,10 @@ namespace OTOSFER
 
         private void VoyageListbtn_Click(object sender, RoutedEventArgs e)
         {
-            Globals.gununtarihi = "22.04.2020";
             CallUserControls.Add_Uc(icerik, new VoyageListUc());
         }
 
-        public void PastVoyagebtn_Click(object sender, RoutedEventArgs e)
+        private void PastVoyagebtn_Click(object sender, RoutedEventArgs e)
         {
             ChooseDateForPastVoyageList cdfpvl = new ChooseDateForPastVoyageList();
             cdfpvl.ShowDialog();

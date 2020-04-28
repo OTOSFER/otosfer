@@ -27,7 +27,8 @@ namespace OTOSFER.UserControls
     {
         List<Items> vlit = new List<Items>();
         string vltemp;
-        string[] vlyuklenecek = new string[8];
+        string[] vlyuklenecek = new string[9];
+        
         public VoyageListUc()
         {
             InitializeComponent();
@@ -37,13 +38,13 @@ namespace OTOSFER.UserControls
 
         private void vluc_Loaded(object sender, RoutedEventArgs e)
         {
-            
+            Globals.vldg = VoyageListdg;
             using (StreamReader sr = new StreamReader("C:\\Users\\Lenovo\\Desktop\\" + Globals.gununtarihi + ".txt"))
             {
+
                 string line;
                 int i = 0;
                 int j = 0;
-
 
                 while ((line = sr.ReadLine()) != null)
                 {
@@ -54,6 +55,7 @@ namespace OTOSFER.UserControls
 
                         if (line[i] != '-')
                         {
+                            if (line[i] !=';')
                             vltemp += line[i].ToString();
                         }
                         else
@@ -64,11 +66,17 @@ namespace OTOSFER.UserControls
                             if (j == vlyuklenecek.Length)
                                 j = 0;
                         }
+
                         i++;
                     }
                     i = 0;
-                    vlit.Add(new Items { t = vlyuklenecek[0], s = vlyuklenecek[1], ky = vlyuklenecek[2], vy = vlyuklenecek[3], k = vlyuklenecek[4], p = vlyuklenecek[5], yk = vlyuklenecek[6], bf = vlyuklenecek[7] });
-   
+
+                    if (line[line.Length - 1] == ';')
+                        vlit.Add(new Items { sno = Convert.ToInt32(vlyuklenecek[0]), t = vlyuklenecek[1], s = vlyuklenecek[2], gzr = vlyuklenecek[3], k = vlyuklenecek[4], p = vlyuklenecek[5], yk = vlyuklenecek[6], bf = vlyuklenecek[7] });
+                    
+                    
+
+
                 }
                 VoyageListdg.ItemsSource = "null";
                 
@@ -85,10 +93,10 @@ namespace OTOSFER.UserControls
             {   
                 if(i==VoyageListdg.SelectedIndex)
                 {
+                    vld.VoyageListDetailsefernotxt.Text =(abc.sno).ToString();
                     vld.VoyageListDetailtarihtxt.Text = abc.t;
                     vld.VoyageListDetailsaattxt.Text = abc.s;
-                    vld.VoyageListDetailkalkisyeritxt.Text = abc.ky;
-                    vld.VoyageListDetailvarisyeritxt.Text = abc.vy;
+                    vld.VoyageListDetailkalkisyeritxt.Text = abc.gzr;
                     vld.VoyageListDetailkaptantxt.Text = abc.k;
                     vld.VoyageListDetailplakatxt.Text = abc.p;
                     vld.VoyageListDetailyolcukapasitesitxt.Text = abc.yk;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OTOSFER.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,12 @@ namespace OTOSFER
             InitializeComponent();
         }
 
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            DateTime tarih = DateTime.Today;
+            Globals.gununtarihi = tarih.ToShortDateString();
+            
+        }
         private void Voyagebtn_Click_1(object sender, RoutedEventArgs e)
         {
             VoyageHomePage vhp = new VoyageHomePage();
@@ -38,6 +45,8 @@ namespace OTOSFER
             thp.Show();
             this.Close();
         }
+
+        
     }
 }
 

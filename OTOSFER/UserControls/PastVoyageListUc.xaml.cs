@@ -24,7 +24,7 @@ namespace OTOSFER.UserControls
     {
         List<Items> pvlit = new List<Items>();
         string pvltemp;
-        string[] pvlyuklenecek = new string[8];
+        string[] pvlyuklenecek = new string[9];
 
         public PastVoyageListUc()
         {
@@ -63,7 +63,7 @@ namespace OTOSFER.UserControls
                         i++;
                     }
                     i = 0;
-                    pvlit.Add(new Items { t = pvlyuklenecek[0], s = pvlyuklenecek[1], ky = pvlyuklenecek[2], vy = pvlyuklenecek[3], k = pvlyuklenecek[4], p = pvlyuklenecek[5], yk = pvlyuklenecek[6], bf = pvlyuklenecek[7] });
+                    pvlit.Add(new Items { sno = Convert.ToInt32(pvlyuklenecek[0]) ,t = pvlyuklenecek[1], s = pvlyuklenecek[2], gzr = pvlyuklenecek[3],k = pvlyuklenecek[4], p = pvlyuklenecek[5], yk = pvlyuklenecek[6], bf = pvlyuklenecek[7] });
 
                 }
                 PastVoyageListdg.ItemsSource = "null";

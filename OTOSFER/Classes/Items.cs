@@ -13,8 +13,7 @@ namespace OTOSFER.Classes
         public int sno { get; set; }
         public string t { get; internal set; }
         public string s { get; internal set; }
-        public string ky { get; internal set; }
-        public string vy { get; internal set; }
+        public string gzr { get; internal set; }
         public string k { get; internal set; }
         public string p { get; internal set; }
         public string yk { get; internal set; }

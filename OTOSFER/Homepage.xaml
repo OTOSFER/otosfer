@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OTOSFER"
         mc:Ignorable="d"
-        Title="HomePage" Height="550" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="HomePage" Height="550" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded">
     <Grid>
 
         <Grid.ColumnDefinitions>
