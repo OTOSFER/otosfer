@@ -35,7 +35,9 @@ namespace OTOSFER
         private void Voyagebtn_Click_1(object sender, RoutedEventArgs e)
         {
             VoyageHomePage vhp = new VoyageHomePage();
+			
             vhp.Show();
+			
             this.Close();
         }
 
