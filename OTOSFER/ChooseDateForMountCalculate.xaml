@@ -12,7 +12,11 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Label Content="Tarih ve Saat Seçiniz" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0"></Label>
-        <ComboBox Width="190" Height="30" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0"></ComboBox>
+        <ComboBox x:Name="MountCalculateDatecmb" Width="190" Height="30" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0">
+            <ComboBoxItem Content="30.04.2020"/>
+            <ComboBoxItem Content="29.04.2020"/>
+            <ComboBoxItem Content="28.04.2020"/>
+        </ComboBox>
         <Border Grid.Column="1">
             <Button x:Name="MountCalculatetbtn" VerticalAlignment="Center" HorizontalAlignment="Left" Content="Hesapla" Width="90" Height="30" Margin="10,80,0,0" BorderBrush="{x:Null}" Click="MountCalculatetbtn_Click"></Button>
         </Border>
@@ -20,4 +24,5 @@
             <Button x:Name="MountCalculateCancelbtn" VerticalAlignment="Center" HorizontalAlignment="Center" Width="90" Height="30" Content="İptal" Margin="10,80,0,0" BorderBrush="{x:Null}" Click="MountCalculateCancelbtn_Click" ></Button>
         </Border>
     </Grid>
+    
 </Window>

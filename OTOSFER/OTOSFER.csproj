@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ChooseDateForFutureVoyageList.xaml.cs">
+      <DependentUpon>ChooseDateForFutureVoyageList.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ChooseDateForMountCalculate.xaml.cs">
       <DependentUpon>ChooseDateForMountCalculate.xaml</DependentUpon>
     </Compile>
@@ -77,6 +80,9 @@
     <Compile Include="UserControls\AvailableVoyageListUc.xaml.cs">
       <DependentUpon>AvailableVoyageListUc.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\FutureVoyageListuc.xaml.cs">
+      <DependentUpon>FutureVoyageListuc.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\MountCalculateUc.xaml.cs">
       <DependentUpon>MountCalculateUc.xaml</DependentUpon>
     </Compile>
@@ -95,6 +101,10 @@
     <Compile Include="VoyageListDetail.xaml.cs">
       <DependentUpon>VoyageListDetail.xaml</DependentUpon>
     </Compile>
+    <Page Include="ChooseDateForFutureVoyageList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ChooseDateForMountCalculate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -128,6 +138,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\AvailableVoyageListUc.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\FutureVoyageListuc.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

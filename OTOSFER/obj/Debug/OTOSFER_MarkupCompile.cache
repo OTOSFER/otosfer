@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Lenovo\source\repos\OTOSFER\OTOSFER\obj\Debug\
+C:\Users\akinb\OneDrive\Masaüstü\Test\OTOSFER\obj\Debug\
 OTOSFER
 none
 false
 DEBUG;TRACE
-C:\Users\Lenovo\source\repos\OTOSFER\OTOSFER\App.xaml
-131149765160
+C:\Users\akinb\OneDrive\Masaüstü\Test\OTOSFER\App.xaml
+151277112023
 
-21-1247083054
+23-262573526
 13-1505183044
-ChooseDateForMountCalculate.xaml;ChooseDateForPastVoyageList.xaml;DataForChoosenVoyage.xaml;Homepage.xaml;TicketHomePage.xaml;TicketOperation.xaml;UserControls\AvailableVoyageListUc.xaml;UserControls\MountCalculateUc.xaml;UserControls\PastVoyageListUc.xaml;UserControls\VoyageAddUc.xaml;UserControls\VoyageListUc.xaml;VoyageHomePage.xaml;VoyageListDetail.xaml;
+ChooseDateForFutureVoyageList.xaml;ChooseDateForMountCalculate.xaml;ChooseDateForPastVoyageList.xaml;DataForChoosenVoyage.xaml;Homepage.xaml;TicketHomePage.xaml;TicketOperation.xaml;UserControls\AvailableVoyageListUc.xaml;UserControls\FutureVoyageListuc.xaml;UserControls\MountCalculateUc.xaml;UserControls\PastVoyageListUc.xaml;UserControls\VoyageAddUc.xaml;UserControls\VoyageListUc.xaml;VoyageHomePage.xaml;VoyageListDetail.xaml;
 
 False
 

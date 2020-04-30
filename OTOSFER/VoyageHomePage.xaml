@@ -53,6 +53,11 @@
                         <Label Content="Geçmiş Seferler" Foreground="White" FontSize="20"></Label>
                     </DockPanel>
                 </Button>
+                <Button Name="FutureVoyagebtn" Height="75" Background="Transparent" BorderBrush="{x:Null}" Click="FutureVoyagebtn_Click">
+                    <DockPanel>
+                        <Label Content="Gelecek Seferler" Foreground="White" FontSize="20"></Label>
+                    </DockPanel>
+                </Button>
                 <Button x:Name="MountCalculate" Height="75" Background="Transparent" BorderBrush="{x:Null}" Click="MountCalculate_Click">
                     <DockPanel>
                         <Label Content="Gelir Hesapla" Foreground="White" FontSize="20"></Label>

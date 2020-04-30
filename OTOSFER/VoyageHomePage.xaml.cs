@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
+using static OTOSFER.Classes.Node;
 
 namespace OTOSFER
 {
@@ -33,7 +34,7 @@ namespace OTOSFER
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            Globals.grd = icerik;
+            Globals.grd = icerik; 
         }
 
         private void Close_Click(object sender, RoutedEventArgs e)
@@ -66,11 +67,16 @@ namespace OTOSFER
 
         private void MountCalculate_Click(object sender, RoutedEventArgs e)
         {
+            
             ChooseDateForMountCalculate cdfmc = new ChooseDateForMountCalculate();
             cdfmc.ShowDialog();
             
         }
 
-        
+        private void FutureVoyagebtn_Click(object sender, RoutedEventArgs e)
+        {
+            ChooseDateForFutureVoyageList cdffvl = new ChooseDateForFutureVoyageList();
+            cdffvl.ShowDialog();
+        }
     }
 }

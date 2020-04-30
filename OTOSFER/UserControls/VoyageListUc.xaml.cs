@@ -17,6 +17,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static OTOSFER.Classes.Node;
 
 namespace OTOSFER.UserControls
 {
@@ -28,7 +29,8 @@ namespace OTOSFER.UserControls
         List<Items> vlit = new List<Items>();
         string vltemp;
         string[] vlyuklenecek = new string[9];
-        
+        DoubleLinkedList dllist = new DoubleLinkedList();
+
         public VoyageListUc()
         {
             InitializeComponent();
@@ -39,49 +41,35 @@ namespace OTOSFER.UserControls
         private void vluc_Loaded(object sender, RoutedEventArgs e)
         {
             Globals.vldg = VoyageListdg;
-            using (StreamReader sr = new StreamReader("C:\\Users\\Lenovo\\Desktop\\" + Globals.gununtarihi + ".txt"))
+           
+            using (StreamReader sr = new StreamReader("C:\\Users\\akinb\\OneDrive\\Masaüstü\\" + Globals.gununtarihi + ".txt"))
             {
-
                 string line;
-                int i = 0;
-                int j = 0;
 
                 while ((line = sr.ReadLine()) != null)
                 {
                     
-
-                    while (i != line.Length)
+                    if ((line[line.Length-1]) == ';')
                     {
-
-                        if (line[i] != '-')
-                        {
-                            if (line[i] !=';')
-                            vltemp += line[i].ToString();
-                        }
-                        else
-                        {
-                            vlyuklenecek[j] = vltemp;
-                            vltemp = "";
-                            j++;
-                            if (j == vlyuklenecek.Length)
-                                j = 0;
-                        }
-
-                        i++;
+                        
+                        dllist.AddNode(line);
+                       
                     }
-                    i = 0;
-
-                    if (line[line.Length - 1] == ';')
-                        vlit.Add(new Items { sno = Convert.ToInt32(vlyuklenecek[0]), t = vlyuklenecek[1], s = vlyuklenecek[2], gzr = vlyuklenecek[3], k = vlyuklenecek[4], p = vlyuklenecek[5], yk = vlyuklenecek[6], bf = vlyuklenecek[7] });
-                    
-                    
-
-
                 }
-                VoyageListdg.ItemsSource = "null";
-                
-                VoyageListdg.ItemsSource = vlit;
 
+                Node node = dllist.First;
+                while(node != null)
+                {
+                    
+                    vlit.Add(new Items { sno = node.SeferNo, t = node.Tarih, s = node.Saat, gzr = node.Guzergah, k = node.Kaptan, p = node.Plaka, yk = node.Kapasite, bf = node.BiletFiyati });
+                    
+                    node = node.next;
+                }
+
+                VoyageListdg.ItemsSource = "null";
+
+                VoyageListdg.ItemsSource = vlit;
+  
             }
         }
 
@@ -96,7 +84,7 @@ namespace OTOSFER.UserControls
                     vld.VoyageListDetailsefernotxt.Text =(abc.sno).ToString();
                     vld.VoyageListDetailtarihtxt.Text = abc.t;
                     vld.VoyageListDetailsaattxt.Text = abc.s;
-                    vld.VoyageListDetailkalkisyeritxt.Text = abc.gzr;
+                    vld.VoyageListDetailguzergahtxt.Text = abc.gzr;
                     vld.VoyageListDetailkaptantxt.Text = abc.k;
                     vld.VoyageListDetailplakatxt.Text = abc.p;
                     vld.VoyageListDetailyolcukapasitesitxt.Text = abc.yk;

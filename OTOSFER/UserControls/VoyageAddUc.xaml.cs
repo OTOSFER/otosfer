@@ -15,27 +15,79 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static OTOSFER.Classes.Node;
+using static OTOSFER.Classes.Node.Node1;
 
 namespace OTOSFER
 {
 
     public partial class VoyageAddUc : UserControl
     {
-        CiftYonluBagliListe Sefereklelist = new CiftYonluBagliListe();
-        CiftYonluBagliListee Koltuklist = new CiftYonluBagliListee();
+        DoubleLinkedList VoyageDLList = new DoubleLinkedList();
+        DoubleLinkedList1 SeatDLList = new DoubleLinkedList1();
+        string line;
+        string line1;
+        int i = 0;
+        int j = 0;
+        int k = 0;
+        string temp = "";
+
         public VoyageAddUc()
         {
             InitializeComponent();
         }
-        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        private void vauc_Loaded(object sender, RoutedEventArgs e)
         {
-            
+            if (!File.Exists(Globals.tumseferyolu))
+            {
+                using (StreamWriter sws = File.CreateText(Globals.tumseferyolu))
+                {
+                    sws.Close();
+                }
+            }
+            using (StreamReader sr = new StreamReader(Globals.tumseferyolu))
+            {
+                while ((line = sr.ReadLine()) != null)
+                {
+                    j++;
+
+                }
+                sr.Close();
+            }
+            using (StreamReader sr = new StreamReader(Globals.tumseferyolu))
+            { 
+                while ((line1 =sr.ReadLine()) != null)
+                {
+                    
+                    if (k != j-1)
+                        k++;
+                    else
+                    {
+                        while (i != line1.Length)
+                        {
+                            if (line1[i] != '-')
+                            {
+                                temp += line1[i].ToString();
+                                
+                            }
+                            else
+                                break;
+                            i++;
+                        }
+                    }
+     
+                }
+                if (temp != "")
+                { Globals.seferno = Convert.ToInt32(temp)+1; }
+                
+                sr.Close();
+            }
         }
 
         private void VoyageAddbtn_Click(object sender, RoutedEventArgs e)
         {
             string ts = VoyageAddTarihtxt.Text +".txt";
-            string path = "C:\\Users\\Lenovo\\Desktop\\" + ts;
+            string path = "C:\\Users\\akinb\\OneDrive\\Masaüstü\\" + ts;
             
 
              if (VoyageAddGuzergahcmb.SelectedIndex == -1)
@@ -56,16 +108,19 @@ namespace OTOSFER
              {
                 if (MessageBox.Show("Seferi Eklemek İstediğinize Emin Misiniz ?", "Onay", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                 {
+                    string VoyageDatas = Convert.ToInt32(Globals.seferno) + "-" + VoyageAddTarihtxt.Text + "-" + VoyageAddSaattxt.Text + "-" + VoyageAddGuzergahcmb.Text + "-" + VoyageAddKaptancmb.Text + "-" +
+                    VoyageAddPlakacmb.Text + "-" + VoyageAddYolcuKapasitesitxt.Text + "-" + VoyageAddBiletFiyatitxt.Text +"-"+ ";";
+                    
+                    VoyageDLList.AddNode(VoyageDatas);
+
                     //Koltuk listesi oluşturma
-                    for (int i=1;i<=Convert.ToInt32(VoyageAddYolcuKapasitesitxt.Text);i++) 
+                    for (int i = 1; i <= Convert.ToInt32(VoyageAddYolcuKapasitesitxt.Text); i++)
                     {
-                        Koltuklist.Ekle(i.ToString(),VoyageAddBiletFiyatitxt.Text," "," ","Boş");
+                        SeatDLList.AddNode1(i.ToString()+"-"+VoyageAddBiletFiyatitxt.Text+"-"+" "+"-"+" "+"-"+"Boş"+"-");
                     }
 
-                    //Seferlistesine Seferi Ekleme
-                    Sefereklelist.SeferEkle(Globals.seferno.ToString(),VoyageAddTarihtxt.Text,VoyageAddSaattxt.Text,VoyageAddGuzergahcmb.Text,VoyageAddKaptancmb.Text,VoyageAddPlakacmb.Text,VoyageAddYolcuKapasitesitxt.Text,VoyageAddBiletFiyatitxt.Text,Koltuklist.ilk);
-                    
-                    //Oluşturulan Sefer Tarihli dosya oluşturma
+                    VoyageDLList.Last.Otobus = SeatDLList.First;
+                    //Girilen Sefer Bilgilerinin ve sefere ait olan koltuk bilgilerinin txt dosyasına yazılması 
                     if (!File.Exists(path))
                     {
                         using (StreamWriter sws = File.CreateText(path))
@@ -73,63 +128,53 @@ namespace OTOSFER
                             sws.Close();
                         }
                     }
-                    //Oluşturulan Sefer Tarihli txtye seferi listeden ekleme
                     using (StreamWriter sw = File.AppendText(path))
                     {
-                        SeferDugum gecici = Sefereklelist.Seferson;
-                        sw.Write(gecici.SeferNo+"-"+gecici.Tarih+"-"+gecici.Saat+"-"+gecici.Guzergah+"-"+gecici.Kaptan+"-"+gecici.Plaka+"-"+gecici.Kapasite+"-"+gecici.BiletFiyati+";");
-                        sw.Write(Environment.NewLine);
-                        sw.Close();
-                    }
-                    //Oluşturulan Sefere ait Koltuk bilgilerini txtye listeden ekleme
-                    using (StreamWriter sw = File.AppendText(path))
-                    {
-                        Dugum gecici = Koltuklist.ilk;
-                        while(gecici != null)
+                        Node node = VoyageDLList.Last;
+                        Node1 node1 = SeatDLList.First;
+                        sw.Write(node.Data+Environment.NewLine);
+                        while (node1 != null)
                         {
-                            sw.Write(gecici.KoltukNo + "-" + gecici.Fiyat + "-" + gecici.AdSoyad + "-" + gecici.Cinsiyet + "-" + gecici.Durum + "-");
-                            sw.Write(Environment.NewLine);
-                            gecici = gecici.Sonraki;
+                            sw.Write(node1.Data+Environment.NewLine); 
+                            node1 = node1.next;
                         }
                         sw.Close();
+                       
                     }
-                    //Oluşturlan Seferin ve Koltul Bilgisinin Tüm Seferlere Eklenmesi
-                    if (!File.Exists(Globals.tumseferyolu))
+
+                    //Girilen Sefer Bilgisilerinin ve koltuk bilgisinin tumseferlistesi txt dosyasına yazılması
+                    if(!File.Exists(Globals.tumseferyolu))
                     {
-                        using (StreamWriter swtsy = File.CreateText(Globals.tumseferyolu))
+                        using (StreamWriter sw = File.CreateText(Globals.tumseferyolu))
                         {
-                            swtsy.Close();
+                            sw.Close();
                         }
-                    }
-                    using (StreamWriter swtsy = File.AppendText(Globals.tumseferyolu))
-                    {
-                        SeferDugum gecici = Sefereklelist.Seferson;
-                        swtsy.Write(gecici.SeferNo + "-" + gecici.Tarih + "-" + gecici.Saat + "-" + gecici.Guzergah + "-" + gecici.Kaptan + "-" + gecici.Plaka + "-" + gecici.Kapasite + "-" + gecici.BiletFiyati + "-");
-                        swtsy.Write(Environment.NewLine);
-                        swtsy.Close();
                     }
 
                     using (StreamWriter sw = File.AppendText(Globals.tumseferyolu))
                     {
-                        Dugum gecici = Koltuklist.ilk;
-                        while (gecici != null)
-                        {
-                            sw.Write(gecici.KoltukNo + "-" + gecici.Fiyat + "-" + gecici.AdSoyad + "-" + gecici.Cinsiyet + "-" + gecici.Durum + "-");
-                            sw.Write(Environment.NewLine);
-                            gecici = gecici.Sonraki;
-                        }
+                        Node node = VoyageDLList.Last;
+                        //Node1 node1 = SeatDLList.First;
+                        sw.Write(node.Data + Environment.NewLine);
+                        /*while (node1 != null)
+                        //{
+                          //  sw.Write(node1.Data + Environment.NewLine);
+                          //  node1 = node1.next;
+                        }*/
                         sw.Close();
                     }
+
                     Globals.seferno++;
-                    Koltuklist.Temizle();
-                    MessageBox.Show("İşlem Başarılı");
+                    SeatDLList.Delete1();
+                    MessageBox.Show("Başarıyla Eklendi");
                 }
+                
+               
 
-
-            }
+             }
             
         }
 
-       
+        
     }
 }

@@ -17,26 +17,26 @@ using System.Windows.Shapes;
 namespace OTOSFER
 {
     /// <summary>
-    /// Interaction logic for ChooseDateForMountCalculate.xaml
+    /// Interaction logic for ChooseDateForFutureVoyageList.xaml
     /// </summary>
-    public partial class ChooseDateForMountCalculate : Window
+    public partial class ChooseDateForFutureVoyageList : Window
     {
-        public ChooseDateForMountCalculate()
+        public ChooseDateForFutureVoyageList()
         {
             InitializeComponent();
         }
 
-        private void MountCalculateCancelbtn_Click(object sender, RoutedEventArgs e)
+        private void FutureVoyageListbtn_Click(object sender, RoutedEventArgs e)
         {
+            Globals.gelecekguntarihi = futurevoyagedatecmb.Text;
+            CallUserControls.Add_Uc(Globals.grd, new FutureVoyageListuc());
             this.Close();
         }
 
-        private void MountCalculatetbtn_Click(object sender, RoutedEventArgs e)
+        private void FutureVoyageListCancelbtn_Click(object sender, RoutedEventArgs e)
         {
-            Globals.gelirhesaplamatarihi = MountCalculateDatecmb.Text;
-            
-            CallUserControls.Add_Uc(Globals.grd, new MountCalculateUc());
-
+            this.Close();
         }
+     
     }
 }

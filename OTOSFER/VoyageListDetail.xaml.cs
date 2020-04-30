@@ -14,6 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static OTOSFER.Classes.Node;
 
 namespace OTOSFER
 {
@@ -22,6 +23,8 @@ namespace OTOSFER
     /// </summary>
     public partial class VoyageListDetail : Window
     {
+        DoubleLinkedList dllist = new DoubleLinkedList();
+        DoubleLinkedList dllist1 = new DoubleLinkedList();
         public VoyageListDetail()
         {
             InitializeComponent();
@@ -32,10 +35,9 @@ namespace OTOSFER
             VoyageListDetailtarihtxt.IsEnabled = false;
             VoyageListDetailsaattxt.IsEnabled = false;
             VoyageListDetailbiletfiyatitxt.IsEnabled = false;
-            VoyageListDetailkalkisyeritxt.IsEnabled = false;
+            VoyageListDetailguzergahtxt.IsEnabled = false;
             VoyageListDetailkaptantxt.IsEnabled = false;
             VoyageListDetailplakatxt.IsEnabled = false;
-            VoyageListDetailvarisyeritxt.IsEnabled = false;
             VoyageListDetailyolcukapasitesitxt.IsEnabled = false;
             VoyageListDetailsefernotxt.IsEnabled = false;
         }
@@ -45,12 +47,13 @@ namespace OTOSFER
             VoyageListDetailtarihtxt.IsEnabled = true;
             VoyageListDetailsaattxt.IsEnabled = true;
             VoyageListDetailbiletfiyatitxt.IsEnabled = true;
-            VoyageListDetailkalkisyeritxt.IsEnabled = true;
+            VoyageListDetailguzergahtxt.IsEnabled = true;
             VoyageListDetailkaptantxt.IsEnabled = true;
             VoyageListDetailplakatxt.IsEnabled = true;
-            VoyageListDetailvarisyeritxt.IsEnabled = true;
             VoyageListDetailyolcukapasitesitxt.IsEnabled = true;
             VoyageListDetailsefernotxt.IsEnabled = true;
+            VoyageListDetailGuncellebtn.IsEnabled = true;
+            VoyageListDetailDuzenlebtn.IsEnabled = false;
         }
         private void VoyageListDetailKapatbtn_Click(object sender, RoutedEventArgs e)
         {
@@ -59,18 +62,109 @@ namespace OTOSFER
 
         private void VoyageListDetailSilbtn_Click(object sender, RoutedEventArgs e)
         {
-            string silineceksefertarih = VoyageListDetailtarihtxt.Text;
-            int silinecekseferno = Convert.ToInt32(VoyageListDetailsefernotxt.Text);
-
-            if (MessageBox.Show("Seferi Silmek İstediğinize Emin Misiniz ?", "Onay", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            /*if (MessageBox.Show("Seferi Silmek İstediğinize Emin Misiniz ?", "Onay", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
 
-                List<string> alinanveri = File.ReadAllLines("C:\\Users\\Lenovo\\Desktop\\" + silineceksefertarih + ".txt").ToList();
-                alinanveri.RemoveAt(silinecekseferno);
-                File.WriteAllLines("C:\\Users\\Lenovo\\Desktop\\" + silineceksefertarih + ".txt", alinanveri.ToArray());
-                MessageBox.Show("İşlem Başarılı");
-                this.Close();
-            }
+                Globals.silinecekseferno = Convert.ToInt32(VoyageListDetailsefernotxt.Text);
+                Globals.silineceksefertarih = VoyageListDetailtarihtxt.Text;
+
+               using (StreamReader sr = new StreamReader("C:\\Users\\akinb\\OneDrive\\Masaüstü\\"+ Globals.silineceksefertarih + ".txt"))
+                {
+                    string line;
+
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        if ((line[line.Length - 1]) == ';')
+                        {
+                            dllist.AddNode(line);
+
+                        }
+                    }
+                    sr.Close();
+                }
+
+                Node node = dllist.First;
+                while (node != null)
+                {
+                    if (node.previous == null && node.SeferNo == Globals.seferno)
+                    {
+                        node.next.previous = null;
+                    }
+                    else if (node.SeferNo == Globals.seferno)
+                    {
+                        
+                        node.next.previous = node.previous;
+                        node.previous.next = node.next;
+                    }
+                    else if (node.next == null && node.SeferNo == Globals.seferno)
+                    {
+                        node.previous.next = null;
+                    }
+
+                    node = node.next;
+                }
+
+                using (StreamWriter sw = File.AppendText("C:\\Users\\akinb\\OneDrive\\Masaüstü\\" + Globals.silineceksefertarih + ".txt"))
+                {
+                    while (node != null)
+                    {
+                        sw.Write(node.Data + Environment.NewLine);
+                        node = node.next;
+                    }
+                    sw.Close();
+                }
+
+
+                using (StreamReader sr = new StreamReader(Globals.tumseferyolu))
+                {
+                    string line;
+
+                    while ((line = sr.ReadLine()) != null)
+                    {
+
+                        if ((line[line.Length - 1]) == ';')
+                        {
+                            dllist1.AddNode(line);
+                        }
+                    }
+                    sr.Close();
+                }
+
+                Node node1 = dllist1.First;
+                while (node1 != null)
+                {
+                    if (node1.previous == null && node1.SeferNo == Globals.seferno)
+                    {
+                        node1.next.previous = null;
+                    }
+                    else if (node1.SeferNo == Globals.seferno)
+                    {
+                       
+                        node1.next.previous = node1.previous;
+                        node1.previous.next = node1.next;
+                    }
+                    else if (node1.next == null && node1.SeferNo == Globals.seferno)
+                    {
+                        node1.previous.next = null;
+                    }
+
+                    node1 = node1.next;
+                }
+
+                using (StreamWriter sw = File.AppendText(Globals.tumseferyolu)) 
+                {
+                    while (node != null)
+                    {
+                        sw.Write(node.Data+Environment.NewLine);
+                        node = node.next;
+                    }
+                    sw.Close();
+                }
+                MessageBox.Show("Silme işlemi başarılı");
+            }*/
+        }
+        private void VoyageListDetailGuncellebtn_Click(object sender, RoutedEventArgs e)
+        {
 
         }
     }
