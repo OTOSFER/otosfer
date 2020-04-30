@@ -30,7 +30,6 @@ namespace OTOSFER
         {
             DateTime tarih = DateTime.Today;
             Globals.gununtarihi = tarih.ToShortDateString();
-            
         }
         private void Voyagebtn_Click_1(object sender, RoutedEventArgs e)
         {
